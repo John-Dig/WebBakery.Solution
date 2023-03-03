@@ -17,7 +17,7 @@ namespace Bakery.Tests
     [TestMethod] //o1
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test Order");
+      Order newOrder = new Order("test Order", "weekly order", 150, new DateTime(2023, 3, 6));
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     //   [TestMethod] //o
