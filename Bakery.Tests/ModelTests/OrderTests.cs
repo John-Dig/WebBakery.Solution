@@ -32,16 +32,19 @@ namespace Bakery.Tests
       Assert.AreEqual(title, result);
     }
 
-    //   [TestMethod] //o
-    // public void 
-    // {
-    //   //arrange
+      [TestMethod] //o3
+    public void GetDescriptionGetPriceGetDate_ReturnsDescriptionPriceAndDate_StringIntDateTime()
+        {
+      //arrange
+      string description = "like 100 Muffins";
+      int price = 150;
+      var date = new DateTime(2023, 3, 6);
 
-    //   //act
+      //act
 
-    //   //assert
+      //assert
 
-    // }
+    }
     //   [TestMethod] //o
     // public void 
     // {
