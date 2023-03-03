@@ -20,13 +20,25 @@ namespace Bakery.Tests
       Order newOrder = new Order("test Order", "weekly order", 150, new DateTime(2023, 3, 6));
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+    [TestMethod] //02
+    public void GetTitle_ReturnsTitle_String()
+    {
+      //Arrange
+      string title = "Monday's Muffins";
+      //Act
+      Order newOrder = new Order(title, "weekly order", 150, new DateTime(2023, 3, 6));
+      string result = newOrder.Title;
+      //Assert
+      Assert.AreEqual(title, result);
+    }
+
     //   [TestMethod] //o
     // public void 
     // {
     //   //arrange
-      
+
     //   //act
-      
+
     //   //assert
 
     // }
@@ -34,9 +46,9 @@ namespace Bakery.Tests
     // public void 
     // {
     //   //arrange
-      
+
     //   //act
-      
+
     //   //assert
 
     // }
