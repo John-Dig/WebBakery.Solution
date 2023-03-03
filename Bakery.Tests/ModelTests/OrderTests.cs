@@ -36,15 +36,23 @@ namespace Bakery.Tests
     public void GetDescriptionGetPriceGetDate_ReturnsDescriptionPriceAndDate_StringIntDateTime()
         {
       //arrange
+      string title = "Monday's Muffins";
       string description = "like 100 Muffins";
       int price = 150;
       var date = new DateTime(2023, 3, 6);
 
       //act
-
+      Order newOrder = new Order(title, description, price, date);
+      string resultDesc = newOrder.Description;
+      int resultP = newOrder.Price;
+      DateTime resultD = newOrder.Date;
       //assert
-
-    }
+      
+      
+      Assert.AreEqual(description, resultDesc);
+      Assert.AreEqual(price, resultP);
+      Assert.AreEqual(date, resultD);
+        }
     //   [TestMethod] //o
     // public void 
     // {
