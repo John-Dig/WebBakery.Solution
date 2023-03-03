@@ -60,12 +60,31 @@ namespace Bakery.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod] //v5
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
       //arrange
-      //act
-      //assert
-      //arrange
-      //act
-      //assert
+      string name01 = "Sally's Cafe";
+      string name02 = "Mari's Cafe";
+      Vendor newVendor1 = new Vendor(name01);
+      Vendor newVendor2 = new Vendor(name02);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
+      //act
+       Vendor result = Vendor.Find(2);
+
+      //assert
+      Assert.AreEqual(newVendor2, result);
+    }
+    //  [TestMethod] //v
+    // public void 
+    // {
+    //   //arrange
+      
+    //   //act
+      
+    //   //assert
+
+    // }
   }
 }
