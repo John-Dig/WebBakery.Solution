@@ -29,6 +29,9 @@ namespace Bakery.Models
     {
       return _instances[searchId-1];
     }
-   
+    public static List<Order> GetAll()
+    {
+      return _instances;
+    }
   }
 }

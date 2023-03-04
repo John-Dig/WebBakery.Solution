@@ -89,7 +89,7 @@ namespace Bakery.Tests
       //arrange
       Order newOrder1 = new Order("test Order1", "weekly order1", 150, new DateTime(2023, 3, 6));
       Order newOrder2 = new Order("test Order2", "weekly order2", 159, new DateTime(2023, 3, 7));
-      List <Order> newList = new List<Order> {newOrder1, newOrder2};
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       //act
       Order result = Order.Find(2);
@@ -97,7 +97,20 @@ namespace Bakery.Tests
       //assert
       Assert.AreEqual(newOrder2, result);
     }
-       
+    [TestMethod] //o6
+    public void GetAll_GetsAllInstancesOfOrder_OrderList()
+    {
+      //arrange
+      Order newOrder1 = new Order("test Order1", "weekly order1", 150, new DateTime(2023, 3, 6));
+      Order newOrder2 = new Order("test Order2", "weekly order2", 159, new DateTime(2023, 3, 7));
+    List<Order> newList = new List<Order> { newOrder1, newOrder2};
+
+    //act
+    List<Order> result = Order.GetAll();
+
+    //assert
+    CollectionAssert.AreEqual(newList, result);
   }
+}
 }
 
