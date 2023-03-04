@@ -76,13 +76,28 @@ namespace Bakery.Tests
       string resultDesc = newOrder.Description;
       int resultPrice = newOrder.Price;
       var resultDate = newOrder.Date;
-        //assert
+      //assert
 
       Assert.AreEqual(updatedTitle, resultTitle);
       Assert.AreEqual(updatedDesc, resultDesc);
       Assert.AreEqual(updatedPrice, resultPrice);
       Assert.AreEqual(updatedDate, resultDate);
     }
+    [TestMethod] //o5
+    public void Find_FindsInstanceOfOrder_Order()
+    {
+      //arrange
+      Order newOrder1 = new Order("test Order1", "weekly order1", 150, new DateTime(2023, 3, 6));
+      Order newOrder2 = new Order("test Order2", "weekly order2", 159, new DateTime(2023, 3, 7));
+      List <Order> newList = new List<Order> {newOrder1, newOrder2};
+
+      //act
+      Order result = Order.Find(2);
+
+      //assert
+      Assert.AreEqual(newOrder2, result);
+    }
+       
   }
 }
 
