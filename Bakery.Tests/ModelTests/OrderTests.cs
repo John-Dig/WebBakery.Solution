@@ -32,9 +32,9 @@ namespace Bakery.Tests
       Assert.AreEqual(title, result);
     }
 
-      [TestMethod] //o3
+    [TestMethod] //o3
     public void GetDescriptionGetPriceGetDate_ReturnsDescriptionPriceAndDate_StringIntDateTime()
-        {
+    {
       //arrange
       string title = "Monday's Muffins";
       string description = "like 100 Muffins";
@@ -47,21 +47,42 @@ namespace Bakery.Tests
       int resultP = newOrder.Price;
       DateTime resultD = newOrder.Date;
       //assert
-      
-      
+
+
       Assert.AreEqual(description, resultDesc);
       Assert.AreEqual(price, resultP);
       Assert.AreEqual(date, resultD);
-        }
-    //   [TestMethod] //o
-    // public void 
-    // {
-    //   //arrange
+    }
+    [TestMethod] //o4
+    public void SetAllProperties_SetsAllProperties_StringStringIntDateTime()
+    {
+      //arrange
+      string title = "Monday's Muffins";
+      string description = "like 100 Muffins";
+      int price = 150;
+      var date = new DateTime(2023, 3, 6);
+      Order newOrder = new Order(title, description, price, date);
 
-    //   //act
+      //act      
+      string updatedTitle = "Tuesday's Trash";
+      string updatedDesc = "like a bunch of stale Muffins";
+      int updatedPrice = 33;
+      var updatedDate = new DateTime(2023, 3, 7);
+      newOrder.Title = updatedTitle;
+      newOrder.Description = updatedDesc;
+      newOrder.Price = updatedPrice;
+      newOrder.Date = updatedDate;
+      string resultTitle = newOrder.Title;
+      string resultDesc = newOrder.Description;
+      int resultPrice = newOrder.Price;
+      var resultDate = newOrder.Date;
+        //assert
 
-    //   //assert
-
-    // }
+      Assert.AreEqual(updatedTitle, resultTitle);
+      Assert.AreEqual(updatedDesc, resultDesc);
+      Assert.AreEqual(updatedPrice, resultPrice);
+      Assert.AreEqual(updatedDate, resultDate);
+    }
   }
 }
+
