@@ -111,6 +111,18 @@ namespace Bakery.Tests
     //assert
     CollectionAssert.AreEqual(newList, result);
   }
+   [TestMethod] //o7
+    public void GetAll_ReturnsEmptyListFromDatabase_OrderList() //assures that the database is correctly clearing between tests
+    {
+      //arrange
+    List<Order> newList = new List<Order> { };
+
+    //act
+    List<Order> result = Order.GetAll();
+
+    //assert
+    CollectionAssert.AreEqual(newList, result);
+  }
 }
 }
 
