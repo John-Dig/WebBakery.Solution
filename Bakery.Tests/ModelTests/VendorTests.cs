@@ -33,7 +33,7 @@ namespace Bakery.Tests
       Assert.AreEqual(name, result);
     }
     [TestMethod] //v3
-    public void GetId_ReturnsCategoryId_Int()
+    public void GetId_ReturnsVendorId_Int()
     {
       //arrange
       string name = "test vendor";
@@ -78,7 +78,7 @@ namespace Bakery.Tests
     }
     //----------------start here
     // [TestMethod] //v6
-    // public void AddOrder_AssociatesOrderWithCategory_OrderList()
+    // public void AddOrder_AssociatesOrderWithVendor_OrderList()
     // {
     //   //Arrange
     //   string orderTitle = "Monday's Complete Order.";
