@@ -27,7 +27,7 @@ namespace Bakery.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpGet("vendors/{id}")]
+    [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
