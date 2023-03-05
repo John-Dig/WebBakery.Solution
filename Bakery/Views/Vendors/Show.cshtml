@@ -5,17 +5,27 @@
 @using Bakery.Models;
 
 <h3>Here are all the orders for this vendor</h3>
+@if (@Model.Count == 0)
+{
+  <p>No orders have been added</p>
+}
 
-<ol>
-Model: System.Collections.Generic.Dictionary`2[System.String,System.Object];<br>
-@Model
-  @* @foreach (Order order in @Model["orders"])  
+  @foreach (Order order in @Model["orders"])  
   {
     <li><a href='vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Title</a></li>
-  } *@
-</ol>
+  }
+
 <p><a href='/vendors/@Model["vendor"].Id/orders/new'></a></p>
 <p><a href='/vendors'>Return to vendors list</a></p>
 <p><a href='/'>Return to Main Page</a></p>
 
+@* FOR REFERENCE
+@if (@Model.Count == 0)
+{
+  <p>No vendors have been added</p>
+}
 
+@foreach (Vendor vendor in Model)
+{
+  <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
+} *@

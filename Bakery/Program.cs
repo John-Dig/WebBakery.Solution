@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder; // this namespace lets us access tools to create and configure a web application host
 using Microsoft.Extensions.DependencyInjection; //this namespace allows us to access tools to create services within our web app that get added to our web application via dependency injection
 
-namespace Tama
+namespace Bakery
 {
   class Program
   {
