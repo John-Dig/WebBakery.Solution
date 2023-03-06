@@ -14,6 +14,7 @@ namespace Bakery.Models
       Name = name;
       _instances.Add(this);
       Id = _instances.Count;
+      Orders = new List<Order> {} ;
     }
     public static List<Vendor> GetAll()
     {
