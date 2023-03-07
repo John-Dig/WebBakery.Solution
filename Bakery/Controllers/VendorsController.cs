@@ -40,16 +40,15 @@ namespace Bakery.Controllers
 
     // -jd not sure I understand this jd- This one creates new Orders within a given Vendor, not new Vendors:
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string orderTitle)
+    public ActionResult Show(int vendorId, string orderTitle, string orderDescription, int orderPrice, DateTime orderDate)
     {
+      Order order = new Order(orderTitle, orderDescription, orderPrice, orderDate);
+      Vendor vendor = Vendor.Find(vendorId);
+      vendor.AddOrder(order);
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(orderTitle, "weekly order", 150, new DateTime(1999, 3, 6));
-      foundVendor.AddOrder(newOrder);
-      List<Order> vendorOrders = foundVendor.Orders;
-      model.Add("orders", vendorOrders);
-      model.Add("vendor", foundVendor);
-      return View("Show", model);
+      model.Add("order", order);
+      model.Add("vendor", vendor);
+      return View(model);
     }
   }
 
