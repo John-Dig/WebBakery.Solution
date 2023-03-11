@@ -3,9 +3,11 @@
 }
 
 <h1>Order Details: </h1>
-@* changed these two lines below, changing orders to order: *@
-<h3>@Model["order"].Title</h3> 
-<p>Vendor: @Model["order"].Description</p> 
+<h3>@Model["orders"].Title</h3> 
+<p>Description: @Model["orders"].Description</p> 
+<p>Price: @Model["orders"].Price</p>
+<p>Date: @Model["orders"].Date</p>
+<p></p>
 
 <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
 <a href='/vendors'>View all vendors</a>
