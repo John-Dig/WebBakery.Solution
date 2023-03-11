@@ -5,7 +5,6 @@
 ## Technologies used
 * .NET 6.0
 * C #
-* 
 
 ## Description
   Software for Pierre to track his Vendors and Orders.
