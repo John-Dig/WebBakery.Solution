@@ -38,7 +38,6 @@ namespace Bakery.Controllers
       return View(model);
     }
 
-    // -jd not sure I understand this jd- This one creates new Orders within a given Vendor, not new Vendors:
     [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult Show(int vendorId, string orderTitle, string orderDescription, int orderPrice, DateTime orderDate)
     {
@@ -46,8 +45,8 @@ namespace Bakery.Controllers
       Vendor vendor = Vendor.Find(vendorId);
       vendor.AddOrder(order);
       Dictionary<string, object> model = new Dictionary<string, object>();
-      model.Add("order", order);
-      model.Add("vendor", vendor);
+      model.Add("orders", order);
+      model.Add("vendor", vendor); 
       return View(model);
     }
   }

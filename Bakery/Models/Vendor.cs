@@ -4,8 +4,8 @@ namespace Bakery.Models
 {
   public class Vendor //Vendor Class Constructor
   {
-    public string Name { get; set; }
     private static List<Vendor> _instances = new List<Vendor> { };
+    public string Name { get; set; }
     public int Id { get; set; }//remove set?
     public List<Order> Orders {get; set;}
 

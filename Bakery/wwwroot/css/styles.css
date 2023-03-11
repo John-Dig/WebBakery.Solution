@@ -36,6 +36,17 @@ body {
   
 
 }
+form {
+  text-align: right;
+}
+
+input {
+  margin:5px;
+}
+
+button {
+  margin: 10px;
+}
 
 div#footer {
   position:fixed;
